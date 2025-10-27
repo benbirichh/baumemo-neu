@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+    --color-ly-50: rgb(255, 204, 0, 0.1);
+    --color-ly-100: rgb(255, 204, 0, 0.2);
+    --color-ly-200: rgb(255, 204, 0, 0.3);
+    --color-ly-300: rgb(255, 204, 0, 0.4);
+    --color-ly-400: rgb(255, 204, 0, 0.5);
+    --color-ly-600: rgb(255, 204, 0, 0.6); 
+    --color-ly-700: rgb(255, 204, 0, 0.7);
+    --color-ly-800: rgb(255, 204, 0, 0.8);
+    --color-ly-900: rgb(255, 204, 0, 0.9);
+    --color-lydark-600: rgb(191, 153, 0, 0.6);
+    --font-family-heading: "Poppins", sans-serif;
+    --font-family-body: "Mulish", sans-serif;
+}
