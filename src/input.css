@@ -15,3 +15,40 @@
     --font-family-heading: "Poppins", sans-serif;
     --font-family-body: "Mulish", sans-serif;
 }
+
+/* Header erscheint beim Scrollen - CSS only */
+header {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation basierend auf Scroll-Position */
+@supports (animation-timeline: scroll()) {
+    @keyframes fade-in {
+        from {
+            background-color: transparent;
+            backdrop-filter: blur(0px);
+            box-shadow: none;
+        }
+        to {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+    }
+    
+    header {
+        animation: fade-in linear;
+        animation-timeline: scroll();
+        animation-range: 0 200px;
+    }
+}
+
+/* Fallback für ältere Browser - Header wird sichtbar bei :has() */
+@supports not (animation-timeline: scroll()) {
+    body:has(*:target) header,
+    body:not(:has(*:first-child:hover)) header {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+}
